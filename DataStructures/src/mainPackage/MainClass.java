@@ -1,9 +1,24 @@
 package mainPackage;
 
-public class MainClass {
+import linkedList.LinkedList;
+import stack.Stack;
 
-	public static void main(String[] args) {
-		System.out.println("s");
+public class MainClass {
+ 
+	public static void main(String[] args) throws Exception {
+		
+		LinkedList<Integer> ll = new LinkedList();
+		Stack<Integer> myStack = new Stack<Integer>();
+		java.util.LinkedList<Integer> lw = new java.util.LinkedList<Integer>();
+		myStack.push(12);
+		myStack.push(15);
+		myStack.pop();
+		myStack.push(45);
+		myStack.push(123);
+		myStack.pop();
+		myStack.pop();
+		myStack.pop();
+		System.out.println(myStack.peek());
 	}
 
 }
