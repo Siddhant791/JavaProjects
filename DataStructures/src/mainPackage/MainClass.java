@@ -1,12 +1,24 @@
 package mainPackage;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 import linkedList.LinkedList;
 import stack.Stack;
 
 public class MainClass {
  
 	public static void main(String[] args) throws Exception {
+//		Collections.sort();
 		
+		String d;
+		
+		int[][] a = {{5,1,3,6,2},{51,4,8}};
+		System.out.println(a[1].length);
+		String addu = "hello";
+		List<Integer> x = new ArrayList<>();
 		LinkedList<Integer> ll = new LinkedList();
 		Stack<Integer> myStack = new Stack<Integer>();
 		java.util.LinkedList<Integer> lw = new java.util.LinkedList<Integer>();
@@ -17,10 +29,22 @@ public class MainClass {
 		myStack.push(123);
 		myStack.pop();
 		myStack.pop();
-		myStack.pop();
+//		myStack.pop();
 		System.out.println(myStack.peek());
+		for(int z[] : a) {
+			for(int k: z) {
+				System.out.print(k+" ");
+			}
+			System.out.println("");
+		}
 	}
 
+}
+
+class Student{
+	
+	private String name;
+	private String marks;
 }
 class Mobile
 {
