@@ -1,6 +1,9 @@
 package tree;
 
+import java.util.*;
+
 public class BinaryTreeWithoutNode implements BinaryTree {
+
 	private int value;
 	private BinaryTreeWithoutNode right;
 	private BinaryTreeWithoutNode left;
@@ -9,19 +12,31 @@ public class BinaryTreeWithoutNode implements BinaryTree {
 		this.value = value;
 	}
 
+//	public void insert(int val) {
+//		if (val <= value) {
+//			if (left == null) {
+//				left = new BinaryTreeWithoutNode(val);
+//			} else {
+//				left.insert(val);
+//			}
+//		} else {
+//			if (right == null) {
+//				right = new BinaryTreeWithoutNode(val);
+//			} else {
+//				right.insert(val);
+//			}
+//		}
+//	}
+
 	public void insert(int val) {
-		if (val <= value) {
-			if (left == null) {
-				left = new BinaryTreeWithoutNode(val);
-			} else {
-				left.insert(val);
-			}
+		if (this.value >= val && this.left == null) {
+			this.left = new BinaryTreeWithoutNode(val);
+		} else if (this.value >= val) {
+			this.left.insert(val);
+		} else if (this.right == null) {
+			this.right = new BinaryTreeWithoutNode(val);
 		} else {
-			if (right == null) {
-				right = new BinaryTreeWithoutNode(val);
-			} else {
-				right.insert(val);
-			}
+			this.right.insert(val);
 		}
 	}
 
@@ -72,6 +87,33 @@ public class BinaryTreeWithoutNode implements BinaryTree {
 			right.postOrderTraversal();
 		}
 		System.out.println(value);
+	}
+
+	public void printBFS() {
+		Queue<BinaryTreeWithoutNode> queue = new LinkedList<BinaryTreeWithoutNode>();
+		queue.add(this);
+		while (!queue.isEmpty()) {
+			BinaryTreeWithoutNode currentNode = queue.remove();
+			System.out.println(currentNode.value);
+			if (currentNode.left != null) {
+				queue.add(currentNode.left);
+			}
+			if (currentNode.right != null) {
+				queue.add(currentNode.right);
+			}
+		}
+	}
+
+	@Override
+	public int totalNumberOfNodes() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Node deletNodeFromTree(int value) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
