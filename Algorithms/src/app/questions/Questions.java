@@ -1,6 +1,23 @@
 package app.questions;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Questions {
+
+	public static void main(String[] args) {
+//		int input[][] = { { 1, 1, 0, 0, 1, 0, 0, 1, 1, 0 }, { 1, 0, 0, 1, 0, 1, 1, 1, 1, 1 },
+//				{ 1, 1, 1, 0, 0, 1, 1, 1, 1, 0 }, { 0, 1, 1, 1, 0, 1, 1, 1, 1, 1 }, { 0, 0, 1, 1, 1, 1, 1, 1, 1, 0 },
+//				{ 1, 1, 1, 1, 1, 1, 0, 1, 1, 1 }, { 0, 1, 1, 1, 1, 1, 1, 0, 0, 1 }, { 1, 1, 1, 1, 1, 0, 0, 1, 1, 1 },
+//				{ 0, 1, 0, 1, 1, 0, 1, 1, 1, 1 }, { 1, 1, 1, 0, 1, 0, 1, 1, 1, 1 } };
+//		updateMatrix(input);
+		Queue<int[]> qu = new LinkedList<int[]>();
+		qu.add(new int[]{1,2});
+
+		LongestPalindromeString lp = new LongestPalindromeString();
+		System.out.println(lp.longestPalindrome("jglknendplocymmvwtoxvebkekzfdhykknufqdkntnqvgfbahsljkobhbxkvyictzkqjqydczuxjkgecdyhixdttxfqmgksrkyvopwprsgoszftuhawflzjyuyrujrxluhzjvbflxgcovilthvuihzttzithnsqbdxtafxrfrblulsakrahulwthhbjcslceewxfxtavljpimaqqlcbrdgtgjryjytgxljxtravwdlnrrauxplempnbfeusgtqzjtzshwieutxdytlrrqvyemlyzolhbkzhyfyttevqnfvmpqjngcnazmaagwihxrhmcibyfkccyrqwnzlzqeuenhwlzhbxqxerfifzncimwqsfatudjihtumrtjtggzleovihifxufvwqeimbxvzlxwcsknksogsbwwdlwulnetdysvsfkonggeedtshxqkgbhoscjgpiel"));
+	}
+
 	/**
 	 * Rotate a array question
 	 * 
@@ -27,8 +44,10 @@ public class Questions {
 		}
 
 	}
+
 	/**
 	 * Find square of array and sort it
+	 * 
 	 * @param nums
 	 * @return
 	 */
@@ -74,4 +93,42 @@ public class Questions {
 		return output;
 	}
 
+	public static int[][] updateMatrix(int[][] mat) {
+		// First pass: check for left and top
+		int rows = mat.length;
+		int cols = mat[0].length;
+		int dist[][] = new int[rows][cols];
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+				dist[i][j] = Integer.MAX_VALUE - 100000;
+			}
+		}
+
+		for (int i = 0; i < rows; i++) {
+			for (int j = 0; j < cols; j++) {
+				if (mat[i][j] == 0) {
+					dist[i][j] = 0;
+				} else {
+					if (i > 0)
+						dist[i][j] = Math.min(dist[i][j], dist[i - 1][j] + 1);
+					if (j > 0)
+						dist[i][j] = Math.min(dist[i][j], dist[i][j - 1] + 1);
+				}
+			}
+		}
+
+		// Second pass: check for bottom and right
+		for (int i = rows - 1; i >= 0; i--) {
+			for (int j = cols - 1; j >= 0; j--) {
+				if (i < rows - 1)
+					dist[i][j] = Math.min(dist[i][j], dist[i + 1][j] + 1);
+				if (j < cols - 1)
+					dist[i][j] = Math.min(dist[i][j], dist[i][j + 1] + 1);
+			}
+		}
+		return dist;
+	}
+
+	
+	
 }
