@@ -4,11 +4,15 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.Comparator;
 public class MainClass {
 
 	public static void main(String[] args) throws IOException {
 		System.out.println("Hello");
+		int[] nums1 = {1,2,3,0,0,0};
+		int[] nums2 = {2,5,6};
+		Solution.merge(nums1,3,nums2,3);
 	}
 }
 
@@ -84,3 +88,46 @@ class Comp implements Comparator<Integer>{
 //
 //
 //}
+
+class Solution {
+	public static void merge(int[] nums1, int m, int[] nums2, int n) {
+		if (m == 0){
+			nums1=nums2;
+		}
+		if (n == 0){
+			return;
+		}
+
+		int[] output = new int[m+n];
+		int i = 0;
+		int j = 0;
+		int count = 0;
+
+		while (i<m && j<n){
+			if (nums1[i] <= nums2[j]){
+				output[count] = nums1[i];
+				i++;
+			}
+			else {
+				output[count] = nums2[j];
+				j++;
+			}
+			count++;
+		}
+
+		while(i<m){
+			output[count] = nums1[i];
+			i++;
+			count++;
+		}
+
+		while(j<n){
+			output[count] = nums2[j];
+			j++;
+			count++;
+		}
+		System.out.println(output[1]);
+		nums1 = output;
+		System.out.println(Arrays.toString(nums1));
+	}
+}
