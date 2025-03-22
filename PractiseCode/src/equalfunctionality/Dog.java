@@ -42,4 +42,9 @@ public class Dog {
         Dog dog =  (Dog)obj;
         return Objects.equals(name,dog.getName());
     }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(name);
+    }
 }
