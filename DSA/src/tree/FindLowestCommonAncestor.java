@@ -1,7 +1,5 @@
 package tree;
 
-import javax.swing.tree.TreeNode;
-
 public class FindLowestCommonAncestor {
 
       public class TreeNode {
