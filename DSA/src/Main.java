@@ -23,8 +23,44 @@ public class Main {
 
         int[] array = new int[5];
         System.out.println(Arrays.toString(array));
+
+        Solution solution = new Solution();
+        int[] input = {1,2,3,1};
+        int result = solution.rob(input);
+        System.out.println(result);
+
+    }
+
+    public static class Solution {
+        public int rob(int[] nums) {
+            if (nums.length == 0) {
+                return 0;
+            }
+            if (nums.length == 1){
+                return nums[0];
+            }
+            int indexEven = 0;
+            int indexOdd = 1;
+            int sumEven = 0;
+            int sumOdd = 0;
+
+            while(indexEven < nums.length || indexOdd < nums.length){
+                if (indexEven < nums.length ) {
+                    sumEven+=nums[indexEven];
+                }
+                if (indexOdd < nums.length ) {
+                    sumOdd+=nums[indexOdd];
+                }
+                indexEven+=2;
+                indexOdd+=2;
+            }
+
+            return Math.max(indexEven,indexOdd);
+        }
     }
 }
+
+
 
 // Second largest element in array
 // [1,2,4]
