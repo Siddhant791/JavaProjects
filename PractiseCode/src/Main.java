@@ -2,10 +2,21 @@ package src;
 
 import src.equalfunctionality.Dog;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class Main extends Dog {
     public static void main(String[] args) {
         System.out.println("Hello World");
+        Map<String, Integer> map = new HashMap<>();
+        map.merge("apple", 1, Integer::sum); // Inserts "apple" = 1
+        map.merge("apple", 1, Integer::sum); // Updates "apple" = 2
+        map.merge("banana", 1, Integer::sum); // Updates "apple" = 2
+        map.merge("apple", 1, Integer::sum); // Updates "apple" = 2
+        map.merge("banana", 1, Integer::sum); // Updates "apple" = 2
+
+        System.out.println(map);
 
     }
 
