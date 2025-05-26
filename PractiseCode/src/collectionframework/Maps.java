@@ -1,6 +1,7 @@
 package src.collectionframework;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -33,4 +34,15 @@ public class Maps {
 //                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
+
+    public void groupBy(){
+        List<String> listOfStrings = List.of("Siddhant","Harish", "Siddhant", "Tanya");
+
+        listOfStrings
+                .stream()
+                .collect(Collectors.groupingBy(c-> c,Collectors.counting()))
+                .forEach((key, value) -> System.out.println(key + " : " + value));
+
+
+    }
 }

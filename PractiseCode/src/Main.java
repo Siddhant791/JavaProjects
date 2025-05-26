@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 
 public class Main extends Dog {
@@ -21,14 +22,14 @@ public class Main extends Dog {
 //
 //        System.out.println(map);
 
-
         Maps map = new Maps();
-        map.printAllElementsInMap();
-        Map<Integer, String> evenMap = map.filterMapIfKeyIsOdd();
-        evenMap
-                .entrySet()
-                .stream()
-                .forEach(System.out::println);
+//        map.printAllElementsInMap();
+        map.groupBy();
+//        Map<Integer, String> evenMap = map.filterMapIfKeyIsOdd();
+//        evenMap
+//                .entrySet()
+//                .stream()
+//                .forEach(System.out::println);
 
     }
 
