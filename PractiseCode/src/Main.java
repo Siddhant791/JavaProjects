@@ -24,6 +24,11 @@ public class Main extends Dog {
 
         Maps map = new Maps();
         map.printAllElementsInMap();
+        Map<Integer, String> evenMap = map.filterMapIfKeyIsOdd();
+        evenMap
+                .entrySet()
+                .stream()
+                .forEach(System.out::println);
 
     }
 
