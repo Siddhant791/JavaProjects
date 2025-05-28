@@ -2,6 +2,8 @@ package src;
 
 import src.collectionframework.Maps;
 import src.equalfunctionality.Dog;
+import src.multithreading.Harish;
+import src.multithreading.Siddhant;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -30,6 +32,12 @@ public class Main extends Dog {
 //                .entrySet()
 //                .stream()
 //                .forEach(System.out::println);
+
+        Harish t1 = new Harish();
+        Siddhant t2 = new Siddhant();
+
+        t1.start();
+        t2.start();
 
     }
 
