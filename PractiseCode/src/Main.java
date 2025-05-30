@@ -2,8 +2,7 @@ package src;
 
 import src.collectionframework.Maps;
 import src.equalfunctionality.Dog;
-import src.multithreading.Harish;
-import src.multithreading.Siddhant;
+import src.multithreading.*;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -24,20 +23,36 @@ public class Main extends Dog {
 //
 //        System.out.println(map);
 
-        Maps map = new Maps();
+//        Maps map = new Maps();
 //        map.printAllElementsInMap();
-        map.groupBy();
+//        map.groupBy();
 //        Map<Integer, String> evenMap = map.filterMapIfKeyIsOdd();
 //        evenMap
 //                .entrySet()
 //                .stream()
 //                .forEach(System.out::println);
 
-        Harish t1 = new Harish();
-        Siddhant t2 = new Siddhant();
+//        Harish t1 = new Harish();
+//        Siddhant t2 = new Siddhant();
+//
+//        t1.start();
+//        t2.start();
 
-        t1.start();
-        t2.start();
+
+        JavaDeveloper javaDev = new JavaDeveloper("Siddhant");
+        SoftwareEngineer pythonDev = new PythonDeveloper();
+//
+//        javaDev.startCoding();
+//        System.out.println(javaDev.nameOfDeveloper());
+//        pythonDev.startCoding();
+//
+//        SoftwareEngineer javaScriptDev = () -> System.out.println("Started coding in javascript");
+//        javaScriptDev.startCoding();
+
+        Thread javaDeveloperThread = new Thread(javaDev);
+        Thread pythonDeveloper = new Thread(pythonDev);
+        javaDeveloperThread.start();
+        pythonDeveloper.start();
 
     }
 
