@@ -2,7 +2,7 @@ package src.multithreading;
 
 import java.util.stream.IntStream;
 
-public class Siddhant  extends Thread{
+public class Siddhant extends Thread{
     @Override
     public void run(){
         IntStream

@@ -1,4 +1,4 @@
 package src.interfaces;
 
-public interface Marker {
+public interface Marker{
 }

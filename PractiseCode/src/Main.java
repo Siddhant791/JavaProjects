@@ -2,6 +2,7 @@ package src;
 
 import src.collectionframework.Maps;
 import src.equalfunctionality.Dog;
+import src.interfaces.Marker;
 import src.multithreading.*;
 
 import java.util.Arrays;
@@ -9,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 public class Main extends Dog {
@@ -51,9 +53,11 @@ public class Main extends Dog {
 
         Thread javaDeveloperThread = new Thread(javaDev);
         Thread pythonDeveloper = new Thread(pythonDev);
+        SoftwareEngineerThread javaScript = () -> System.out.println("It's Java script engineer");
+        Thread javaScriptDeveloperThread = new Thread(javaScript);
         javaDeveloperThread.start();
         pythonDeveloper.start();
-
+        javaScriptDeveloperThread.start();
     }
 
     public static class Solution {
