@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class Maps {
 
     // Initalize map method 1
-    Map<Integer, String> map = new HashMap<>() {{
+    public Map<Integer, String> map = new HashMap<>() {{
         put(1, "Sid");
         put(2, "Harish");
         put(3 , "Tanya");
