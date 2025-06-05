@@ -11,6 +11,8 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -54,14 +56,14 @@ public class Main extends Dog {
 //        System.out.println(map);
 
         // Maps section starts from here
-        Map<String, Integer> map = new HashMap<>(){
-            {
-                put("apple", 1);
-                put("banana", 2);
-                put("orange", 3);
-            }
-        };
-        String key = "bananadsada";
+//        Map<String, Integer> map = new HashMap<>(){
+//            {
+//                put("apple", 1);
+//                put("banana", 2);
+//                put("orange", 3);
+//            }
+//        };
+//        String key = "bananadsada";
 
 //        if (map.containsKey(key)) {
 //            int value = map.get(key) +1;
@@ -72,11 +74,11 @@ public class Main extends Dog {
 //            map.put(key, 1); // If key does not exist, add it with value 1
 //            System.out.println("Key does not exist in the map");
 //        }
-        map.compute(key, (k, v) -> (v == null) ? 1 : v + 1);
-        map.computeIfAbsent(key, k -> 0);
-        map.put(key, map.get(key) + 1);
-
-        System.out.println(map);
+//        map.compute(key, (k, v) -> (v == null) ? 1 : v + 1);
+//        map.computeIfAbsent(key, k -> 0);
+//        map.put(key, map.get(key) + 1);
+//
+//        System.out.println(map);
 
 //        map.computeIfAbsent(key, (s) -> s.put(s, 1)); // If key does not exist, add it with value 1
 
@@ -121,7 +123,18 @@ public class Main extends Dog {
 //        pythonDeveloper.start();
 //        javaScriptDeveloperThread.start();
 
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
+//        Runnable run = () -> System.out.println("Running in a thread using Runnable interfadfdsfdsce");
+//        Function<String, Integer> fn = (s) -> {
+//            System.out.println("Running in a thread using Function interface with input: " + s);
+//            return s.length();
+//        };
+//
+//        Predicate<Integer> predicate = (input) -> input > 10;
+//        System.out.println(predicate.test(4)); // Example usage of Predicate
+//        run.run();
+//        fn.apply("Hello World");
+
+//        ExecutorService executorService = Executors.newFixedThreadPool(3);
 
 
 //        executorService.submit(() -> {
