@@ -267,58 +267,23 @@ public class Main extends Dog {
 //        Override over = new TestOverride();
 //        Override.display(); // Calls the static method in TestOverride class
 
+        // Tree map comparison
 
-//        int[] array = {2, 7, 9, 3, 1};
-        int[] array = {0,3,7,2,5,8,4,6,0,1};
-//        Arrays.sort(array);
-//        System.out.println("Sorted array: " + Arrays.toString(array));
-        System.out.println(longestConsecutive(array));
-
+//        List<Student> studentsList = Arrays.asList(
+//                new Student(1, "Siddhant", 90.0),
+//                new Student(2, "Harish", 85.0),
+//                new Student(3, "Amit", 95.0),
+//                new Student(4, "Ravi", 80.0)
+//        );
+//
+//        TreeMap<Student,Double> studentMap = new TreeMap<>(Comparator.comparing(Student::getName).thenComparing(Student::getMarks));
+//        studentsList.forEach(student -> studentMap.put(student,student.getMarks()));
+//        System.out.println(studentMap);
 
         // Practice
 
 
 
-    }
-
-    private static int longestConsecutive(int[] nums) {
-        int lengthOfArray = nums.length ;
-        if (lengthOfArray == 0){
-            return 0;
-        }
-        if (lengthOfArray == 1){
-            return 1;
-        }
-
-        Arrays.sort(nums);
-
-        int output = 0;
-        int prev = 0;
-        int current = 1;
-
-        while(current < lengthOfArray){
-            int tempCounter = 1;
-            int previousElement = nums[prev];
-            int currentElement = nums[current];
-
-            while((((previousElement + 1) == currentElement) || (previousElement == currentElement)) && (current < lengthOfArray) ){
-                if (previousElement != currentElement)
-                {
-                    tempCounter++;
-                }
-                prev++;
-                current++;
-                if (current < lengthOfArray){
-                    previousElement = nums[prev];
-                    currentElement = nums[current];
-                }
-            }
-            output = Math.max(tempCounter, output);
-            prev++;
-            current++;
-        }
-
-        return output;
     }
 
     public static class Solution {
