@@ -131,7 +131,7 @@ public class Main extends Dog {
 //
 //        Predicate<Integer> predicate = (input) -> input > 10;
 //        System.out.println(predicate.test(4)); // Example usage of Predicate
-//        run.run();
+//        run.run();z
 //        fn.apply("Hello World");
 
 //        ExecutorService executorService = Executors.newFixedThreadPool(3);
@@ -237,14 +237,14 @@ public class Main extends Dog {
 //        numbers.stream();
 //        List  evenNo = numbers.stream().filter(x -> x%2 == 0).distinct().toList();
 //        evenNo.forEach(System.out::println);
-        List<Student> studentsLists = new ArrayList<>() {
-            {
-                add(new Student(1, "Siddhant", 90.0));
-                add(new Student(2, "Harish", 85.0));
-                add(new Student(3, "Amit", 95.0));
-                add(new Student(4, "Ravi", 80.0));
-            }
-        };
+//        List<Student> studentsLists = new ArrayList<>() {
+//            {
+//                add(new Student(1, "Siddhant", 90.0));
+//                add(new Student(2, "Harish", 85.0));
+//                add(new Student(3, "Amit", 95.0));
+//                add(new Student(4, "Ravi", 80.0));
+//            }
+//        };
 //        studentsLists.stream().filter(student -> student.getMarks() > 89).forEach(System.out::println);
 //        studentsLists.stream().map(Student::getName).
 //                map(String::toUpperCase).
@@ -268,11 +268,57 @@ public class Main extends Dog {
 //        Override.display(); // Calls the static method in TestOverride class
 
 
+//        int[] array = {2, 7, 9, 3, 1};
+        int[] array = {0,3,7,2,5,8,4,6,0,1};
+//        Arrays.sort(array);
+//        System.out.println("Sorted array: " + Arrays.toString(array));
+        System.out.println(longestConsecutive(array));
+
 
         // Practice
 
 
 
+    }
+
+    private static int longestConsecutive(int[] nums) {
+        int lengthOfArray = nums.length ;
+        if (lengthOfArray == 0){
+            return 0;
+        }
+        if (lengthOfArray == 1){
+            return 1;
+        }
+
+        Arrays.sort(nums);
+
+        int output = 0;
+        int prev = 0;
+        int current = 1;
+
+        while(current < lengthOfArray){
+            int tempCounter = 1;
+            int previousElement = nums[prev];
+            int currentElement = nums[current];
+
+            while((((previousElement + 1) == currentElement) || (previousElement == currentElement)) && (current < lengthOfArray) ){
+                if (previousElement != currentElement)
+                {
+                    tempCounter++;
+                }
+                prev++;
+                current++;
+                if (current < lengthOfArray){
+                    previousElement = nums[prev];
+                    currentElement = nums[current];
+                }
+            }
+            output = Math.max(tempCounter, output);
+            prev++;
+            current++;
+        }
+
+        return output;
     }
 
     public static class Solution {
