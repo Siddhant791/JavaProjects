@@ -1,9 +1,8 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+package src;
 
-public class Main {
+import src.recursion.Permutation;
+
+public class MainDSA {
     public static void main(String[] args) {
 //        System.out.println("Hello world!");
 //        List<Integer> list = new ArrayList<>();
@@ -21,13 +20,18 @@ public class Main {
 //
 //        System.out.println(SecondLargest);
 
-        int[] array = new int[5];
-        System.out.println(Arrays.toString(array));
+//        int[] array = new int[5];
+//        System.out.println(Arrays.toString(array));
+//
+//        Solution solution = new Solution();
+//        int[] input = {1,2,3,1};
+//        int result = solution.rob(input);
+//        System.out.println(result);
 
-        Solution solution = new Solution();
-        int[] input = {1,2,3,1};
-        int result = solution.rob(input);
-        System.out.println(result);
+        System.out.println("Permutations generated successfully!");
+        Permutation pm = new Permutation();
+        pm.permute(new int[]{1,2,3});
+
 
     }
 

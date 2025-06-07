@@ -282,6 +282,33 @@ public class Main extends Dog {
 
         // Practice
 
+//        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6,7,8,9,10);
+//        // Create a list of list one will have odd and other will have even
+//
+//
+//
+//        List<Integer> even = numbers.stream().filter(element -> element %2 == 0).toList();
+//        List<Integer> odd = numbers.stream().filter(element -> element %2 != 0).toList();
+
+//        List<Integer> list = new ArrayList<>(){
+//            {
+//                add(1);
+//                add(2);
+//                add(3);
+//                add(4);
+//                add(5);
+//                add(6);
+//                add(7);
+//                add(8);
+//                add(9);
+//                add(10);
+//            }
+//        };
+//
+//        List<Integer> next = new ArrayList<>(list);
+//        System.out.println(next);
+//        list.clear();
+//        System.out.println(next);
 
 
     }
