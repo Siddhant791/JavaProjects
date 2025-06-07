@@ -47,6 +47,6 @@ public class Anagram {
                 indexOfCharacters.remove((Character)t.charAt(i));
             }
         }
-        return indexOfCharacters.size() == 0;
+        return indexOfCharacters.isEmpty();
     }
 }
