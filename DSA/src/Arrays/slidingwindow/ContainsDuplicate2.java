@@ -44,27 +44,37 @@ public class ContainsDuplicate2 {
       * @return true if duplicates exist within distance k
       */
      public boolean containsNearbyDuplicateMySolution(int[] nums, int k) {
+         // HashSet to store the elements in current window
          Set<Integer> set = new HashSet<>();
 
+         // Edge case: if k >= array length, we can check entire array at once
          if (k >= nums.length){
              return normalDuplicate(nums, set);
          }
 
+         // Start index for sliding window
          int start = 0;
 
+         // Initialize first window of size k+1
          for (int i=start; i<=k; i++){
+             // If we can't add element, it means duplicate found in window
              if (!set.add(nums[i])){
                  return true;
              }
          }
 
+         // Slide window through rest of array
          for (int j = k+1; j<nums.length; j++){
+             // Remove leftmost element from window
              set.remove(nums[start]);
+             // Move window start point right
              start++;
+             // Try to add new element, return true if it's already in set
              if (!set.add(nums[j])){
                  return true;
              }
          }
+         // No duplicates found within distance k
          return false;
      }
 
@@ -76,11 +86,14 @@ public class ContainsDuplicate2 {
       * Space Complexity: O(n)
       */
      private boolean normalDuplicate(int[] nums, Set<Integer> set){
+         // Simple linear scan for duplicates without distance constraint
          for (int i: nums){
+             // If element already exists in set, we found a duplicate
              if (!set.add(i)){
                  return true;
              }
          }
+         // No duplicates found
          return false;
      }
 
@@ -101,19 +114,24 @@ public class ContainsDuplicate2 {
      * @return true if duplicates exist within distance k
      */
     public boolean containsNearbyDuplicate(int[] nums, int k) {
+        // HashSet to maintain current window elements
         Set<Integer> set = new HashSet<>();
+        // Left pointer of window
         int L = 0;
 
-        for (int R = 0 ; R< nums.length ; R++){
+        // Right pointer moves through array, expanding window
+        for (int R = 0 ; R < nums.length ; R++){
+            // If window size exceeds k, remove leftmost element and shrink window
             if (R - L > k){
-                set.remove(nums[L]);
-                L++;
+                set.remove(nums[L]);    // Remove element at left pointer
+                L++;                    // Move left pointer right
             }
+            // Try to add current element, return true if it's already in window
             if (!set.add(nums[R])){
-                return true;
+                return true;    // Found duplicate within distance k
             }
         }
-
+        // No duplicates found within distance k
         return false;
     }
 }
