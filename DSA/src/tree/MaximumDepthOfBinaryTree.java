@@ -1,5 +1,8 @@
 package src.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * LeetCode 104 - Maximum Depth of Binary Tree
  *
@@ -67,5 +70,64 @@ public class MaximumDepthOfBinaryTree {
         // Recursively find depth of left and right subtrees
         // Add 1 to account for current node
         return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+    }
+
+    /**
+     * Calculates maximum depth using Breadth-First Search (BFS)
+     *
+     * Pattern Used: Level-order traversal with BFS
+     * - Uses a queue to process nodes level by level
+     * - Each level represents one depth unit
+     * - Processes all nodes at current level before moving to next
+     *
+     * Time Complexity: O(n) where n is number of nodes
+     * - Each node is processed exactly once
+     * - Queue operations (add/poll) are O(1)
+     *
+     * Space Complexity: O(w) where w is the maximum width of tree
+     * - In worst case (complete binary tree), w = n/2 ≈ O(n)
+     * - Queue stores at most all nodes at the widest level
+     *
+     * @param root Root node of the binary tree
+     * @return Maximum depth of the tree
+     */
+    public int maxDepthWithBFS(MyTreeNode root) {
+        // Handle empty tree case
+        if (root == null){
+            return 0;
+        }
+
+        // Initialize queue for BFS and add root node
+        Queue<MyTreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        // Track number of levels (depth) in the tree
+        int level = 0;
+
+        // Process nodes level by level until queue is empty
+        while(!queue.isEmpty()){
+            // Get number of nodes at current level
+            int size = queue.size();
+
+            // Process all nodes at current level
+            for (int i = 0 ; i < size ; i++ ){
+                // Remove current node from queue
+                MyTreeNode current = queue.poll();
+
+                // Add right child to queue if exists
+                if (current.right != null){
+                    queue.add(current.right);
+                }
+
+                // Add left child to queue if exists
+                if (current.left != null){
+                    queue.add(current.left);
+                }
+            }
+            // Increment level after processing all nodes at current depth
+            level++;
+        }
+
+        return level;
     }
 }
