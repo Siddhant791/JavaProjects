@@ -6,6 +6,7 @@ import src.oops.overriding.Overriding;
 import src.oops.overriding.TestOverride;
 import src.pojo.C;
 import src.pojo.D;
+import src.pojo.NullOverride;
 import src.pojo.Student;
 
 import java.util.*;
@@ -25,6 +26,10 @@ public class Main extends Dog {
         // Lists section starts from here
 
         System.out.println("Practice Main method starts from here");
+
+//      Override null question
+//        NullOverride nullPass = new NullOverride();
+//        nullPass.test(null);
 //        C.temp();
 //      Static methods can be overriden concept
 //        C my1 = new C();
