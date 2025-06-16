@@ -4,6 +4,8 @@ import src.collectionframework.Maps;
 import src.equalfunctionality.Dog;
 import src.oops.overriding.Overriding;
 import src.oops.overriding.TestOverride;
+import src.pojo.C;
+import src.pojo.D;
 import src.pojo.Student;
 
 import java.util.*;
@@ -21,6 +23,17 @@ public class Main extends Dog {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
 
         // Lists section starts from here
+
+        System.out.println("Practice Main method starts from here");
+//        C.temp();
+//      Static methods can be overriden concept
+//        C my1 = new C();
+//        D my2 = new C();
+//        D my3 = new D();
+//
+//        my1.temp();
+//        my2.temp();
+//        my3.temp();
 
 //        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
 //        Stream<Integer> streamList = list.stream();
@@ -155,25 +168,25 @@ public class Main extends Dog {
 //        });
 //        System.out.println("Task 3 running on Main thread");
 
-        Callable<String> task1 = () -> {
-            System.out.println("Task 1");
-            try {
-                Thread.sleep(5000);
-            } catch (RuntimeException e) {
-                e.getMessage();
-            }
-            return "Siddhant work is done";
-        };
-
-        Callable<String> task2 = () -> {
-            System.out.println("Task 2");
-            try {
-                Thread.sleep(2000);
-            } catch (RuntimeException e) {
-                e.getMessage();
-            }
-            return "Harish work is done";
-        };
+//        Callable<String> task1 = () -> {
+//            System.out.println("Task 1");
+//            try {
+//                Thread.sleep(5000);
+//            } catch (RuntimeException e) {
+//                e.getMessage();
+//            }
+//            return "Siddhant work is done";
+//        };
+//
+//        Callable<String> task2 = () -> {
+//            System.out.println("Task 2");
+//            try {
+//                Thread.sleep(2000);
+//            } catch (RuntimeException e) {
+//                e.getMessage();
+//            }
+//            return "Harish work is done";
+//        };
 
 //        List<Callable<String>> tasks = new ArrayList<>();
 //        tasks.add(task1);
