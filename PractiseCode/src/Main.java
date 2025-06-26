@@ -1,6 +1,7 @@
 package src;
 
 import src.collectionframework.Maps;
+import src.collectionframework.QuestionMapStreams;
 import src.equalfunctionality.Dog;
 import src.oops.overriding.Overriding;
 import src.oops.overriding.TestOverride;
@@ -9,11 +10,13 @@ import src.pojo.D;
 import src.pojo.NullOverride;
 import src.pojo.Student;
 
+import java.sql.Array;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -61,6 +64,18 @@ public class Main extends Dog {
 
 //        List<Integer> mutableList = new ArrayList<>(list); // Mutable list
 //        List<Integer> immutableList = List.copyOf(list); // Immutable list
+
+        List<String> list = List.of("Hello", "Jonny","Hi");
+
+        List<String> list1 = new ArrayList<>();
+
+        list1.add("Harish");
+        list1.add("Sid");
+        list1.add("Hitesh");
+        list1.add(null);
+        System.out.println(QuestionMapStreams.getFirstCharacterToValue(list1));
+
+//        BinaryOperator
 
 
 //        System.out.println("Hello World");

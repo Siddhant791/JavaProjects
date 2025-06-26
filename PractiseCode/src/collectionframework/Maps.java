@@ -30,7 +30,7 @@ public class Maps {
                 .entrySet()
                 .stream()
                 .filter( i -> i.getKey() % 2 == 0)
-                .collect(Collectors.toMap(entry -> entry.getKey() , entry -> entry.getValue()));
+                .collect(Collectors.toMap(entry -> entry.getKey() , Map.Entry::getValue));
 //                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
