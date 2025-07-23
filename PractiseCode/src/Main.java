@@ -65,15 +65,15 @@ public class Main extends Dog {
 //        List<Integer> mutableList = new ArrayList<>(list); // Mutable list
 //        List<Integer> immutableList = List.copyOf(list); // Immutable list
 
-        List<String> list = List.of("Hello", "Jonny","Hi");
-
-        List<String> list1 = new ArrayList<>();
-
-        list1.add("Harish");
-        list1.add("Sid");
-        list1.add("Hitesh");
-        list1.add(null);
-        System.out.println(QuestionMapStreams.getFirstCharacterToValue(list1));
+//        List<String> list = List.of("Hello", "Jonny","Hi");
+//
+//        List<String> list1 = new ArrayList<>();
+//
+//        list1.add("Harish");
+//        list1.add("Sid");
+//        list1.add("Hitesh");
+//        list1.add(null);
+//        System.out.println(QuestionMapStreams.getFirstCharacterToValue(list1));
 
 //        BinaryOperator
 
@@ -343,6 +343,12 @@ public class Main extends Dog {
 //        System.out.println(next);
 //        list.clear();
 //        System.out.println(next);
+
+        int[] nums = {2,4,1,2};
+        int[] nums1 = Arrays.copyOfRange(nums , 0 , nums.length);
+        int[] nums2 = Arrays.copyOfRange(nums , 1 , nums.length - 1);
+        System.out.println(Arrays.toString(nums1));
+        System.out.println(Arrays.toString(nums2));
 
 
     }
