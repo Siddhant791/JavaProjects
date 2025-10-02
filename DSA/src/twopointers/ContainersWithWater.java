@@ -2,7 +2,8 @@ package src.twopointers;
 
 public class ContainersWithWater {
 /**
- * LeetCode 11: Container With Most Water
+ *
+ * LeetCode 11: Container With Most Water - https://leetcode.com/problems/container-with-most-water/
  *
  * Problem:
  * Given an array `height` of n non-negative integers where each element represents a vertical line
