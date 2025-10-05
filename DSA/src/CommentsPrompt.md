@@ -1,3 +1,3 @@
 I'll add detailed comments to the ReorderList class, including the LeetCode problem details and complexity analysis for each part of the algorithm. DOn't make any changes to the code.
 Also try to add the technique/ pattern which is used to solve the question (For e.g. 2 pointers, sliding window etc.) 
-Always add the leetcode link at the top of the comments.
+Always add the leetcode link at the top of the comments. Important note - Don't remove any existing comments in the code, just add your comments around them.
