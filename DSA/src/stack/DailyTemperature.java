@@ -114,5 +114,6 @@ public class DailyTemperature {
                 out[i] = stack.peek()[1] - i;
             }
         }
+        return out;
     }
 }
