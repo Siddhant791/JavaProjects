@@ -78,9 +78,12 @@ public class MinimumCoseClimbingStairs {
      * make a copy before calling this method.
      */
     public int minCostClimbingStairsMostOptimized(int[] cost){
-        for (int i = cost.length - 3 ; i>=0; i--){
-            cost[i] += Math.min(cost[i+1], cost[i+2]);
+        // Iterate from the third-last element down to the first element
+        for (int i = cost.length - 3; i >= 0; i--){
+            // Add the minimum cost of the next one or two steps to current step
+            cost[i] += Math.min(cost[i + 1], cost[i + 2]);
         }
+        // Final answer is the cheaper of starting at step 0 or step 1
         return Math.min(cost[0], cost[1]);
     }
 }
