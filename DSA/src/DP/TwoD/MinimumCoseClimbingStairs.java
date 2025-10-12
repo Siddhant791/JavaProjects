@@ -58,6 +58,25 @@ public class MinimumCoseClimbingStairs {
         return dp[i]; // return and memoize result
     }
 
+    /**
+     * LeetCode Problem: 746. Min Cost Climbing Stairs
+     * https://leetcode.com/problems/min-cost-climbing-stairs/
+     *
+     * Technique: Dynamic Programming — Bottom-up, In-place Space Optimization.
+     *
+     * Description:
+     * - This method performs a bottom-up DP by updating the `cost` array in-place.
+     * - For each index `i` from `cost.length - 3` down to `0`, it sets
+     *   `cost[i] = cost[i] + min(cost[i+1], cost[i+2])`, representing the minimum
+     *   cost to reach the top starting from step `i`.
+     * - The final answer is `min(cost[0], cost[1])` because we may start at step 0 or 1.
+     *
+     * Time Complexity: O(N) — single pass through the array.
+     * Space Complexity: O(1) extra space — modifies input array in-place.
+     *
+     * Note: This mutates the input `cost` array. If the original array must be kept,
+     * make a copy before calling this method.
+     */
     public int minCostClimbingStairsMostOptimized(int[] cost){
         for (int i = cost.length - 3 ; i>=0; i--){
             cost[i] += Math.min(cost[i+1], cost[i+2]);
