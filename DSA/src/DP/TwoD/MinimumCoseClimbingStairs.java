@@ -42,19 +42,19 @@ public class MinimumCoseClimbingStairs {
      * Space Complexity: O(N) for the recursion stack in the worst case (if not memoized, it would be O(2^N)).
      */
     public int dfs(int i, int[] cost, int[] dp){
-    int n = cost.length; // total number of steps
-    if (i >= n ){ // reached or passed the top -> no additional cost
-        return 0;
+        int n = cost.length; // total number of steps
+        if (i >= n ){ // reached or passed the top -> no additional cost
+            return 0;
+        }
+
+        if (dp[i] != -1){ // if already computed, return cached result
+            return dp[i];
+        }
+
+        int first = dfs(i+1, cost,dp); // cost starting from next step (take 1 step)
+        int second = dfs(i+2, cost,dp); // cost starting from next+1 step (take 2 steps)
+
+        dp[i] = cost[i] + Math.min(first,second); // current cost plus cheaper of the two options
+        return dp[i]; // return and memoize result
     }
-
-    if (dp[i] != -1){ // if already computed, return cached result
-        return dp[i];
-    }
-
-    int first = dfs(i+1, cost,dp); // cost starting from next step (take 1 step)
-    int second = dfs(i+2, cost,dp); // cost starting from next+1 step (take 2 steps)
-
-    dp[i] = cost[i] + Math.min(first,second); // current cost plus cheaper of the two options
-    return dp[i]; // return and memoize result
-}
 }
