@@ -31,12 +31,12 @@ public class BalancedSubTree {
     // Complexity:
     // - Time: O(n) — calls dfs exactly once per node.
     // - Space: O(h) recursion depth.
-    public boolean isBalanced(TreeNode root) {
-        Boolean[] output = new Boolean[1];
-        output[0] = true;
-        int depth = dfs(root, output);
+    public boolean isBalanced(TreeNode root) { // Public API: determines if tree is height-balanced
+        Boolean[] output = new Boolean[1]; // mutable single-element container to record imbalance
+        output[0] = true; // optimistic default: assume balanced until DFS finds otherwise
+        int depth = dfs(root, output); // run DFS to compute heights and potentially flip output[0]
 
-        return output[0];
+        return output[0]; // return the recorded balanced/unbalanced result
     }
 
     // Helper DFS that returns the height of the subtree rooted at `root`.
@@ -49,17 +49,21 @@ public class BalancedSubTree {
     // - Work per node: O(1)
     // - Combined complexity: O(n) total.
     public int dfs(TreeNode root, Boolean[] output){
+        // base case: empty subtree has height 0
         if (root == null){
             return 0;
         }
 
+        // recurse left and right to compute their heights (post-order)
         int left = dfs(root.left, output);
         int right = dfs(root.right, output);
 
+        // if the height difference exceeds 1, mark the tree as unbalanced
         if (Math.abs(left - right) > 1){
             output[0] = false;
         }
 
-        return 1 + Math.max(left,right);
+        // return current subtree height: 1 (current node) + max of child heights
+        return 1 + Math.max(left, right);
     }
 }
