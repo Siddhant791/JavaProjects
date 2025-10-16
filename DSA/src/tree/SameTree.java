@@ -1,5 +1,7 @@
 package src.tree;
 
+import java.util.Stack;
+
 /**
  * LeetCode Problem: 100. Same Tree
  * Link: https://leetcode.com/problems/same-tree/
@@ -37,5 +39,29 @@ public class SameTree {
         // Recursively check the left subtrees and the right subtrees.
         // Both left and right subtrees must be identical for the overall trees to be identical.
         return (isSameTree(p.left,q.left) && isSameTree(p.right, q.right));
+    }
+
+    public boolean isSameTreeIterative(TreeNode p, TreeNode q) {
+        Stack<TreeNode[]> stack = new Stack<>();
+
+        stack.push(new TreeNode[]{p,q});
+
+        while(!stack.isEmpty()){
+            TreeNode[] array = stack.pop();
+            TreeNode node1 = array[0]; TreeNode node2 = array[1];
+
+            if (node1 == null && node2 == null){
+                continue;
+            }
+
+            if (node1 == null || node2 == null || node1.val != node2.val){
+                return false;
+            }
+
+            stack.push(new TreeNode[]{node1.left, node2.left});
+            stack.push(new TreeNode[]{node1.right, node2.right});
+        }
+
+        return true;
     }
 }
