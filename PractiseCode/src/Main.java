@@ -344,11 +344,15 @@ public class Main extends Dog {
 //        list.clear();
 //        System.out.println(next);
 
-        int[] nums = {2,4,1,2};
-        int[] nums1 = Arrays.copyOfRange(nums , 0 , nums.length);
-        int[] nums2 = Arrays.copyOfRange(nums , 1 , nums.length - 1);
-        System.out.println(Arrays.toString(nums1));
-        System.out.println(Arrays.toString(nums2));
+//        int[] nums = {2,4,1,2};
+//        int[] nums1 = Arrays.copyOfRange(nums , 0 , nums.length);
+//        int[] nums2 = Arrays.copyOfRange(nums , 1 , nums.length - 1);
+//        System.out.println(Arrays.toString(nums1));
+//        System.out.println(Arrays.toString(nums2));
+
+        List<String> list = List.of("b","a","c");
+        list.sort(String::compareToIgnoreCase);
+
 
 
     }
