@@ -11,7 +11,7 @@ public class Main {
 	
 	public static void main(String[] args) throws UserDefinedExeption {
 		Scanner sc = new Scanner(System.in);
-		int siddhant = 0;
+		int tanya = 0;
 		while(true) {
 			System.out.println("Choose from given below menu \n 1.) ArrayList \n 2.) LinkedHashSet \n 3.)TreeSet \n 4.) Exit ");
 			input = sc.nextInt();sc.nextLine();
@@ -54,4 +54,5 @@ class UserDefinedExeption extends Exception{
 		super(s);
 	}
 }
+
 
