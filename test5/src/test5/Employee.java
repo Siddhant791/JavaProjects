@@ -7,6 +7,10 @@ public class Employee {
 	private String name;
 	private int pay;
 	private double test;
+
+    // Harish feature change
+    private String harish;
+
 	public Employee(int basicSalary, int id, String name) {
 		super();
 		this.basicSalary = basicSalary;
