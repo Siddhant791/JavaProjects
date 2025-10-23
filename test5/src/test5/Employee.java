@@ -6,6 +6,7 @@ public class Employee {
 	private int Id;
 	private String name;
 	private int pay;
+	private double test;
 	public Employee(int basicSalary, int id, String name) {
 		super();
 		this.basicSalary = basicSalary;
@@ -52,3 +53,4 @@ public class Employee {
 
 	
 }
+
