@@ -15,4 +15,21 @@ public class MajorityElement {
 
         return 0;
     }
+
+    public int majorityElementSpaceOptimized(int[] nums) {
+        int result = 0, count = 0;
+
+        for (int i:nums){
+            if (count == 0){
+                result = i;
+            }
+
+            if (i == result){
+                count++;
+            }else{
+                count--;
+            }
+        }
+        return result;
+    }
 }
