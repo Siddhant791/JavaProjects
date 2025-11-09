@@ -259,7 +259,7 @@ public class Main extends Dog {
 //        StringLiteral MyLiteral = new StringLiteral("Hello World");
 //        System.out.println(MyLiteral.getValue());
 
-        //Streams section starts from here
+        //StreamMain section starts from here
 //        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 5, 7, 8);
 //        StreamsClass<Integer> numbersStream = new StreamsClass<>(numbers);
 //        Stream<Integer> concatenatedStream = numbersStream.concatTwoStreams(
